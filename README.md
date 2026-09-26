@@ -105,7 +105,7 @@ JSON
 🏃 Local Setup & ExecutionPrerequisitesPython 3.10+Virtual environment (venv)
 1. Clone & Set Up Environment
 Bash
-git clone [https://github.com/your-username/Tech-pipeline-extractor.git](https://github.com/your-username/Tech-pipeline-extractor.git)
+git clone [https://github.com/Jignesh-3/Tech-pipeline-extractor.git](https://github.com/Jignesh-3/Tech-pipeline-extractor.git)
 cd Tech-pipeline-extractor
 
 # Create and activate virtual environment
