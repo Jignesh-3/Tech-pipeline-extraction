@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KINETIC // Tech Job Intelligence Pipeline</title>
+  
+  <!-- Fonts: Technical Sans & High-Resolution Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="theme-obsidian">
+  <!-- Dynamic Ambient Background Glow -->
+  <div class="ambient-glow glow-primary"></div>
+  <div class="ambient-glow glow-secondary"></div>
+
+  <!-- Primary Application Wrapper -->
+  <div class="app-container">
+
+    <!-- Top Telemetry & Control Strip -->
+    <header class="telemetry-header">
+      <div class="brand-block">
+        <div class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span class="status-label">PIPELINE ACTIVE</span>
+        </div>
+        <h1 class="brand-title">JOB_STREAM<span class="accent-dot">.</span>IO</h1>
+        <p class="brand-subtitle">DETERMINISTIC INGESTION &amp; SKILL INTELLIGENCE</p>
+      </div>
+
+      <div class="hud-stats-group">
+        <div class="hud-stat-cell">
+          <span class="stat-caption">INDEXED POSTINGS</span>
+          <span class="stat-value" id="hud-total-jobs">--</span>
+        </div>
+        <div class="hud-stat-cell">
+          <span class="stat-caption">DEDUPLICATION</span>
+          <span class="stat-value text-emerald">SHA-256</span>
+        </div>
+        <button id="btn-trigger-scrape" class="btn-action-terminal" title="Initiate on-demand scrape and ingestion cycle">
+          <span class="btn-icon">⚡</span>
+          <span class="btn-label">TRIGGER SYNC</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Top Skills Analytics Strip -->
+    <section class="analytics-strip">
+      <div class="strip-header">
+        <span class="strip-tag">[SQL_AGGREGATE]</span>
+        <span class="strip-title">LIVE MARKET DEMAND (TOP SKILLS)</span>
+      </div>
+      <div class="skills-ribbon" id="skills-ribbon">
+        <!-- Dynamically injected via JS -->
+      </div>
+    </section>
+
+    <!-- Filter & Query Matrix -->
+    <section class="filter-matrix">
+      <div class="search-input-wrapper">
+        <span class="search-icon">⌕</span>
+        <input 
+          type="text" 
+          id="search-input" 
+          class="terminal-input" 
+          placeholder="Filter by skill or title (e.g. Python, Docker, Backend)..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <span class="input-telemetry" id="input-status">READY</span>
+      </div>
+
+      <div class="experience-pills" id="experience-filters">
+        <button class="pill-chip active" data-exp="">ALL TIERS</button>
+        <button class="pill-chip" data-exp="Entry Level">ENTRY LEVEL</button>
+        <button class="pill-chip" data-exp="Mid Level">MID LEVEL</button>
+        <button class="pill-chip" data-exp="Senior">SENIOR</button>
+      </div>
+    </section>
+
+    <!-- Standout Kinetic Telemetry Loader -->
+    <div class="kinetic-loader-container" id="stream-loader">
+      <div class="loader-terminal-box">
+        <div class="loader-bar-matrix">
+          <span class="equalizer-bar bar-1"></span>
+          <span class="equalizer-bar bar-2"></span>
+          <span class="equalizer-bar bar-3"></span>
+          <span class="equalizer-bar bar-4"></span>
+          <span class="equalizer-bar bar-5"></span>
+        </div>
+        <div class="loader-hex-stream" id="loader-hash">SHA-256::INITIALIZING_STREAM</div>
+        <div class="loader-status-log" id="loader-log">SEARCHING_NODES_AND_DECRYPTING_BUFFERS...</div>
+      </div>
+    </div>
+
+    <!-- Active Job Stream Grid -->
+    <main class="job-stream-grid" id="job-grid">
+      <!-- Staggered Job Cards injected here -->
+    </main>
+
+    <!-- Empty State Container -->
+    <div class="empty-state-view hidden" id="empty-state">
+      <div class="empty-icon">∅</div>
+      <h3 class="empty-title">NO MATCHING POSTINGS FOUND</h3>
+      <p class="empty-desc">No indexed postings matched your active query filters.</p>
+      <button class="btn-reset-filters" id="btn-reset-filters">CLEAR FILTERS</button>
+    </div>
+
+    <!-- Pagination & Nav HUD -->
+    <footer class="pagination-hud">
+      <div class="hud-page-indicator">
+        RECORD RANGE: <span id="page-range" class="text-white">--</span> OF <span id="page-total" class="text-emerald">--</span>
+      </div>
+      <div class="pagination-controls">
+        <button id="btn-prev-page" class="btn-nav" disabled>PREV_PAGE</button>
+        <span class="page-badge" id="current-page-badge">PAGE 1</span>
+        <button id="btn-next-page" class="btn-nav" disabled>NEXT_PAGE</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
